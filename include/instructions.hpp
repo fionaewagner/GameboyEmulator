@@ -105,9 +105,12 @@ enum class ConditionType {
 class Instruction {
 public:
 
-    Instruction(InstructionType t, AddressMode m,
-                RegisterType r1 = RegisterType::RT_NONE, RegisterType r2 = RegisterType::RT_NONE,
-                ConditionType c = ConditionType::CT_NONE, u8 p = 0);
+    Instruction(InstructionType t = InstructionType::IN_NONE,
+                AddressMode m = AddressMode::AM_NONE,
+                RegisterType r1 = RegisterType::RT_NONE,
+                RegisterType r2 = RegisterType::RT_NONE,
+                ConditionType c = ConditionType::CT_NONE,
+                u8 p = 0);
 
     InstructionType getType() const { return type; }
     AddressMode getMode() const { return mode; }
